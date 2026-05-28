@@ -5,6 +5,17 @@ layout: compress
 <html lang="de">
 
   {% include head.html %}
+  <style>
+    .zeitraum-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2rem}
+    .zeitraum-card{position:relative;display:flex;flex-direction:column;justify-content:flex-end;padding:1.75rem 1.5rem 1.5rem;min-height:200px;border-radius:8px;border-bottom:none;overflow:hidden;transition:transform .2s ease,box-shadow .2s ease}
+    .zeitraum-card:hover{transform:translateY(-3px);box-shadow:0 8px 32px rgba(0,0,0,.35);border-bottom:none}
+    .zeitraum-card:hover .zeitraum-card__img{transform:scale(1.05)}
+    .zeitraum-card__img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(100%);transition:transform .35s ease}
+    .zeitraum-card__overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.8) 0%,rgba(0,0,0,.2) 60%,transparent 100%)}
+    .zeitraum-card__jahre{position:relative;z-index:1;font-size:1.4rem;font-weight:800;color:#fff;line-height:1.1;margin-bottom:.4rem}
+    .zeitraum-card__anzahl{position:relative;z-index:1;font-size:.8rem;color:rgba(255,255,255,.6);letter-spacing:.04em}
+    @media(max-width:48em){.zeitraum-grid{grid-template-columns:repeat(2,1fr)}}
+  </style>
 
   <body class="site">
 
@@ -18,7 +29,6 @@ layout: compress
 
     <main class="site__content">
       <div class="container">
-
         <div class="kat-page">
           <a class="kat-page__back" href="{{ '/' | relative_url }}">← Zurück zur Übersicht</a>
 
@@ -27,52 +37,41 @@ layout: compress
           </div>
 
           {% assign daten = site.data.kategorien[page.daten_key] %}
-          {% if daten %}
-            <p class="kat-page__archiv-hinweis">
-              Alle Links führen zur <a href="https://web.archive.org" target="_blank" rel="noopener">Wayback Machine</a>
-              des Internet Archive. Klicke auf ein Jahr in der Kalenderansicht, um einen konkreten Schnappschuss zu öffnen.
-            </p>
 
-            {% assign eintraege_nach_jahr = daten.eintraege | sort: "jahr" %}
-            {% assign aktuelles_jahrzehnt = "" %}
+          <div class="zeitraum-grid">
 
-            {% for eintrag in eintraege_nach_jahr %}
-              {% assign jahrzehnt = eintrag.jahr | divided_by: 10 | times: 10 %}
-              {% assign jahrzehnt_str = jahrzehnt | append: "er" %}
+            {% assign zeitraeume = "pre-2000,2001-2005,2006-2010,2011-2015,2016-2020,2021-heute" | split: "," %}
+            {% assign labels = "Pre 2000,2001–2005,2006–2010,2011–2015,2016–2020,2021–heute" | split: "," %}
+            {% assign von_arr = "0,2001,2006,2011,2016,2021" | split: "," %}
+            {% assign bis_arr = "2000,2005,2010,2015,2020,9999" | split: "," %}
+            {% assign img_arr = "era-pre2000.jpg,era-2001-2005.jpg,era-2006-2010.jpg,era-2011-2015.jpg,era-2016-2020.jpg,era-2021-heute.jpg" | split: "," %}
 
-              {% if jahrzehnt_str != aktuelles_jahrzehnt %}
-                {% if aktuelles_jahrzehnt != "" %}
-                  </div><!-- /.jahrzehnt__eintraege -->
-                  </section><!-- /.jahrzehnt -->
-                {% endif %}
-                <section class="jahrzehnt">
-                  <h2 class="jahrzehnt__label">{{ jahrzehnt_str }}</h2>
-                  <div class="jahrzehnt__eintraege">
-                {% assign aktuelles_jahrzehnt = jahrzehnt_str %}
+            {% for slug in zeitraeume %}
+              {% assign idx = forloop.index0 %}
+              {% assign label = labels[idx] %}
+              {% assign von = von_arr[idx] | plus: 0 %}
+              {% assign bis = bis_arr[idx] | plus: 0 %}
+              {% assign era_img = img_arr[idx] %}
+
+              {% assign anzahl = 0 %}
+              {% if daten %}
+                {% for eintrag in daten.eintraege %}
+                  {% if eintrag.jahr >= von and eintrag.jahr <= bis %}
+                    {% assign anzahl = anzahl | plus: 1 %}
+                  {% endif %}
+                {% endfor %}
               {% endif %}
 
-              <article class="archiv-eintrag">
-                <div class="archiv-eintrag__jahr">{{ eintrag.jahr }}</div>
-                <div class="archiv-eintrag__inhalt">
-                  <h3 class="archiv-eintrag__band">{{ eintrag.band }}</h3>
-                  <p class="archiv-eintrag__text">{{ eintrag.beschreibung }}</p>
-                  <a class="archiv-eintrag__link" href="{{ eintrag.link }}" target="_blank" rel="noopener">
-                    <svg width="14" height="14" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10.5 3H17v6.5M17 3l-9 9M8 5H4a1 1 0 00-1 1v10a1 1 0 001 1h10a1 1 0 001-1v-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    {{ eintrag.link_text }}
-                  </a>
-                </div>
-              </article>
-
+              <a class="zeitraum-card" href="{{ page.url | relative_url }}{{ slug }}/">
+                <img class="zeitraum-card__img" src="{{ '/assets/img/kategorien/' | append: era_img | relative_url }}" alt="{{ label }}">
+                <div class="zeitraum-card__overlay"></div>
+                <div class="zeitraum-card__jahre">{{ label }}</div>
+                <div class="zeitraum-card__anzahl">{{ anzahl }} Einträge</div>
+              </a>
             {% endfor %}
 
-            {% if aktuelles_jahrzehnt != "" %}
-              </div><!-- /.jahrzehnt__eintraege -->
-              </section><!-- /.jahrzehnt -->
-            {% endif %}
-
-          {% endif %}
+          </div>
         </div>
-
       </div>
     </main>
 

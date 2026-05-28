@@ -1,0 +1,69 @@
+---
+layout: compress
+---
+<!DOCTYPE html>
+<html lang="de">
+
+  {% include head.html %}
+
+  <body class="site">
+
+    {% include header.html %}
+
+    <div class="hero--small">
+      <div class="hero__wrap">
+        <h1 class="hero__title">{{ page.titel }}</h1>
+        <p style="color:rgba(255,255,255,.7);margin:0">{{ page.parent_title }}</p>
+      </div>
+    </div>
+
+    <main class="site__content">
+      <div class="container">
+        <div class="kat-page">
+          <a class="kat-page__back" href="{{ page.parent_url | relative_url }}">← Zurück zu {{ page.parent_title }}</a>
+
+          <p class="kat-page__archiv-hinweis">
+            Alle Links führen zur <a href="https://web.archive.org" target="_blank" rel="noopener">Wayback Machine</a>
+            des Internet Archive. Klicke auf ein Jahr in der Kalenderansicht, um einen konkreten Schnappschuss zu öffnen.
+          </p>
+
+          {% assign daten = site.data.kategorien[page.daten_key] %}
+          {% assign von = page.von %}
+          {% assign bis = page.bis %}
+          {% assign gefunden = 0 %}
+
+          {% if daten %}
+            {% assign eintraege_gefiltert = daten.eintraege | sort: "jahr" %}
+            <div class="jahrzehnt__eintraege" style="margin-top:1.5rem">
+            {% for eintrag in eintraege_gefiltert %}
+              {% if eintrag.jahr >= von and eintrag.jahr <= bis %}
+                {% assign gefunden = gefunden | plus: 1 %}
+                <article class="archiv-eintrag">
+                  <div class="archiv-eintrag__jahr">{{ eintrag.jahr }}</div>
+                  <div class="archiv-eintrag__inhalt">
+                    <h3 class="archiv-eintrag__band">{{ eintrag.band }}</h3>
+                    <p class="archiv-eintrag__text">{{ eintrag.beschreibung }}</p>
+                    <a class="archiv-eintrag__link" href="{{ eintrag.link }}" target="_blank" rel="noopener">
+                      <svg width="14" height="14" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10.5 3H17v6.5M17 3l-9 9M8 5H4a1 1 0 00-1 1v10a1 1 0 001 1h10a1 1 0 001-1v-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                      {{ eintrag.link_text }}
+                    </a>
+                  </div>
+                </article>
+              {% endif %}
+            {% endfor %}
+            </div>
+
+            {% if gefunden == 0 %}
+              <p style="color:#838c8d;padding:2rem 0">Für diesen Zeitraum sind noch keine Einträge vorhanden.</p>
+            {% endif %}
+          {% endif %}
+
+        </div>
+      </div>
+    </main>
+
+    {% include footer.html %}
+
+  </body>
+
+</html>
