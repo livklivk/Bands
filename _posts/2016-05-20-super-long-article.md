@@ -4,4 +4,4 @@ title: "Fanpost"
 featured-img: shane-rounce-205187
 categories: [Oasis, One Direction]
 ---
-{% include archivedWeb.html url="https://www.bbc.co.uk" datetime="2017" %}
+{% include archivedWeb.html url="https://www.spiegel.de" datetime="2025" %}
