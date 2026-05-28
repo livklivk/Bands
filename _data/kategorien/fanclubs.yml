@@ -1,53 +1,52 @@
 beschreibung: >
   Offizielle Fanclubs ermöglichten Fans eine formale Mitgliedschaft mit Vorteilen
   wie Presale-Tickets, exklusiven Merchandise-Artikeln und direkten Band-Updates.
-  Ihre Websites zeigen, wie sich das Konzept der Fangemeinde über Jahrzehnte gewandelt hat.
 
 eintraege:
   - band: "Beatles"
     jahr: 1996
     beschreibung: "The Beatles Official Fan Club hatte bereits früh eine Web-Präsenz – eine direkte Fortsetzung des legendären Briefpost-Fanclubs aus den 1960ern."
-    link: "https://web.archive.org/web/1996*/http://www.beatles.com/"
-    link_text: "Wayback Machine: beatles.com (1996)"
+    url: "http://www.beatles.com/"
+    datetime: "1996"
 
   - band: "Oasis"
     jahr: 1997
     beschreibung: "Der Official Oasis Fan Club bot auf oasisinet.com Mitgliedschaften an – inklusive Mitgliedsausweis, Poster und exklusivem Newsletter."
-    link: "https://web.archive.org/web/1997*/http://www.oasisinet.com/"
-    link_text: "Wayback Machine: oasisinet.com (1997)"
+    url: "http://www.oasisinet.com/"
+    datetime: "1997"
 
   - band: "Spice Girls"
     jahr: 1998
-    beschreibung: "Der offizielle Spice Girls Fan Club verknüpfte die physische Mitgliedschaft (Kit per Post) mit der Website – Fans konnten sich online anmelden."
-    link: "https://web.archive.org/web/1998*/http://www.spicegirls.com/"
-    link_text: "Wayback Machine: spicegirls.com (1998)"
+    beschreibung: "Der offizielle Spice Girls Fan Club verknüpfte die physische Mitgliedschaft mit der Website – Fans konnten sich online anmelden."
+    url: "http://www.spicegirls.com/"
+    datetime: "1998"
 
   - band: "ABBA"
     jahr: 2000
     beschreibung: "ABBA hatten bereits in den 70ern offizielle Fanclubs – die Website abba.com führte diese Tradition ins digitale Zeitalter fort."
-    link: "https://web.archive.org/web/2000*/http://www.abba.com/"
-    link_text: "Wayback Machine: abba.com (2000)"
+    url: "http://www.abba.com/"
+    datetime: "2000"
 
   - band: "Radiohead"
     jahr: 2001
     beschreibung: "W.A.S.T.E. – Radioheads offizieller Fan-Community-Bereich – bot Mitgliedschaften mit exklusiven Downloads und Merchandise."
-    link: "https://web.archive.org/web/2001*/http://www.radiohead.com/"
-    link_text: "Wayback Machine: radiohead.com (2001)"
+    url: "http://www.radiohead.com/"
+    datetime: "2001"
 
   - band: "Arctic Monkeys"
     jahr: 2007
     beschreibung: "Nach ihrem Erfolg richteten Arctic Monkeys einen offiziellen Fan-Bereich ein – mit Presale-Zugang und exklusiven Inhalten für Mitglieder."
-    link: "https://web.archive.org/web/2007*/http://www.arcticmonkeys.com/"
-    link_text: "Wayback Machine: arcticmonkeys.com (2007)"
+    url: "http://www.arcticmonkeys.com/"
+    datetime: "2007"
 
   - band: "One Direction"
     jahr: 2012
-    beschreibung: "Der 1D Fan Club bot Presale-Tickets, exklusive Merchandise-Pakete und direkten Zugang zu Band-Updates – eine der größten Fanclub-Operationen der 2010er."
-    link: "https://web.archive.org/web/2012*/http://www.onedirectionmusic.com/"
-    link_text: "Wayback Machine: onedirectionmusic.com (2012)"
+    beschreibung: "Der 1D Fan Club bot Presale-Tickets, exklusive Merchandise-Pakete und direkten Zugang zu Band-Updates."
+    url: "http://www.onedirectionmusic.com/"
+    datetime: "2012"
 
   - band: "Taylor Swift"
     jahr: 2019
     beschreibung: "Taylor Nation – Swifts inoffiziell-offizielle Fan-Community – wurde über die Website koordiniert und bot Superfans einzigartige Meet-and-Greet-Möglichkeiten."
-    link: "https://web.archive.org/web/2019*/http://www.taylorswift.com/"
-    link_text: "Wayback Machine: taylorswift.com (2019)"
+    url: "http://www.taylorswift.com/"
+    datetime: "2019"

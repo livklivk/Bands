@@ -7,53 +7,53 @@ eintraege:
   - band: "Oasis"
     jahr: 1996
     beschreibung: "Oasis boten auf ihrer frühen Website oasisinet.com eine E-Mail-Liste für Fans an – Neuigkeiten zu Touren und Veröffentlichungen direkt ins Postfach."
-    link: "https://web.archive.org/web/1996*/http://www.oasisinet.com/"
-    link_text: "Wayback Machine: oasisinet.com (1996)"
+    url: "http://www.oasisinet.com/"
+    datetime: "1996"
 
   - band: "Radiohead"
     jahr: 1997
     beschreibung: "Radioheads offizielle Site verlinkle einen Newsletter-Service, über den Fans Updates zu 'OK Computer' und der zugehörigen Tour erhielten."
-    link: "https://web.archive.org/web/1997*/http://www.radiohead.com/"
-    link_text: "Wayback Machine: radiohead.com (1997)"
+    url: "http://www.radiohead.com/"
+    datetime: "1997"
 
   - band: "Spice Girls"
     jahr: 1997
     beschreibung: "Die offizielle Spice Girls Website warb aktiv für ihren E-Mail-Newsletter – mit exklusiven Updates und Gewinnspielen für Abonnenten."
-    link: "https://web.archive.org/web/1997*/http://www.spicegirls.com/"
-    link_text: "Wayback Machine: spicegirls.com (1997)"
+    url: "http://www.spicegirls.com/"
+    datetime: "1997"
 
   - band: "Backstreet Boys"
     jahr: 1998
     beschreibung: "backstreetboys.com listete eine Mailing-Liste prominent auf der Startseite – Fans konnten sich mit ihrer E-Mail-Adresse registrieren."
-    link: "https://web.archive.org/web/1998*/http://www.backstreetboys.com/"
-    link_text: "Wayback Machine: backstreetboys.com (1998)"
+    url: "http://www.backstreetboys.com/"
+    datetime: "1998"
 
   - band: "ABBA"
     jahr: 1999
-    beschreibung: "Die offizielle ABBA-Website (als Reaktion auf das wiedererwachte Interesse durch 'Mamma Mia!') bot einen Newsletter für Neuigkeiten rund um die Band."
-    link: "https://web.archive.org/web/1999*/http://www.abba.com/"
-    link_text: "Wayback Machine: abba.com (1999)"
+    beschreibung: "Die offizielle ABBA-Website bot einen Newsletter für Neuigkeiten rund um die Band."
+    url: "http://www.abba.com/"
+    datetime: "1999"
 
   - band: "Arctic Monkeys"
     jahr: 2006
     beschreibung: "Nach ihrem Durchbruch 2006 boten Arctic Monkeys auf arcticmonkeys.com eine Mailing-Liste an – damals noch parallel zu ersten MySpace-Aktivitäten."
-    link: "https://web.archive.org/web/2006*/http://www.arcticmonkeys.com/"
-    link_text: "Wayback Machine: arcticmonkeys.com (2006)"
+    url: "http://www.arcticmonkeys.com/"
+    datetime: "2006"
 
   - band: "One Direction"
     jahr: 2011
     beschreibung: "Nach der X Factor-Zeit bot onedirectionmusic.com einen offiziellen Newsletter an – neben Social Media noch immer ein wichtiger Kanal für die 'Directioners'."
-    link: "https://web.archive.org/web/2011*/http://www.onedirectionmusic.com/"
-    link_text: "Wayback Machine: onedirectionmusic.com (2011)"
+    url: "http://www.onedirectionmusic.com/"
+    datetime: "2011"
 
   - band: "Taylor Swift"
     jahr: 2014
     beschreibung: "taylorswift.com setzte gezielt einen E-Mail-Newsletter ein, um vor Social-Media-Ankündigungen exklusive Infos an treue Fans zu senden ('Taylor Nation')."
-    link: "https://web.archive.org/web/2014*/http://www.taylorswift.com/"
-    link_text: "Wayback Machine: taylorswift.com (2014)"
+    url: "http://www.taylorswift.com/"
+    datetime: "2014"
 
   - band: "BTS"
     jahr: 2020
     beschreibung: "Weverse und der offizielle BTS-Newsletter kombinieren klassische Mailing-Listen-Logik mit modernen Fan-Community-Plattformen."
-    link: "https://web.archive.org/web/2020*/https://www.bts.com/"
-    link_text: "Wayback Machine: bts.com (2020)"
+    url: "https://www.bts.com/"
+    datetime: "2020"

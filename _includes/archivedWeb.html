@@ -1,17 +1,18 @@
 {% assign raw_url = include.url %}
+{% assign clean_url = raw_url | replace: "https://", "" | replace: "http://", "" %}
+{% if include.datetime %}{% assign ts_part = include.datetime | append: "/" %}{% else %}{% assign ts_part = "" %}{% endif %}
 
-{% assign clean_url = raw_url
-  | replace: "https://", ""
-  | replace: "http://", "" %}
-
-{% if include.datetime %}
-  {% assign ts_part = include.datetime | append: "/" %}
+{% if include.band %}
+<article class="archiv-eintrag archiv-eintrag--embed">
+  <div class="archiv-eintrag__header">
+    {% if include.jahr %}<div class="archiv-eintrag__jahr">{{ include.jahr }}</div>{% endif %}
+    <h3 class="archiv-eintrag__band">{{ include.band }}</h3>
+  </div>
+  {% if include.beschreibung %}<p class="archiv-eintrag__text">{{ include.beschreibung }}</p>{% endif %}
+  <div class="archiv-eintrag__iframe">
+    <iframe src="https://web.archive.org/web/{{ ts_part }}{{ raw_url }}" loading="lazy" style="aspect-ratio: 1.91 / 1; width: 100%; border: 0;"></iframe>
+  </div>
+</article>
 {% else %}
-  {% assign ts_part = "" %}
+<iframe src="https://web.archive.org/web/{{ ts_part }}{{ raw_url }}" loading="lazy" style="aspect-ratio: 1.91 / 1; width: 100%; border: 0;"></iframe>
 {% endif %}
-
-<iframe
-  src="https://embed.archivedweb.net/{{ ts_part }}{{ clean_url }}"
-  loading="lazy"
-  style="aspect-ratio: 1.91 / 1; width: 100%; border: 0;">
-</iframe>
