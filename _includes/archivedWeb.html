@@ -2,6 +2,8 @@
 {% assign clean_url = raw_url | replace: "https://", "" | replace: "http://", "" %}
 {% if include.datetime %}{% assign ts_part = include.datetime | append: "/" %}{% else %}{% assign ts_part = "" %}{% endif %}
 
+{% assign archive_url = "https://web.archive.org/web/" | append: ts_part | append: raw_url %}
+
 {% if include.band %}
 <article class="archiv-eintrag archiv-eintrag--embed">
   <div class="archiv-eintrag__header">
@@ -10,9 +12,13 @@
   </div>
   {% if include.beschreibung %}<p class="archiv-eintrag__text">{{ include.beschreibung }}</p>{% endif %}
   <div class="archiv-eintrag__iframe">
-    <iframe src="https://web.archive.org/web/{{ ts_part }}{{ raw_url }}" loading="lazy" style="aspect-ratio: 1.91 / 1; width: 100%; border: 0;"></iframe>
+    <iframe src="{{ archive_url }}" loading="lazy" style="aspect-ratio: 1.91 / 1; width: 100%; border: 0;"></iframe>
   </div>
+  <a class="archiv-eintrag__extern" href="{{ archive_url }}" target="_blank" rel="noopener">
+    <svg width="13" height="13" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10.5 3H17v6.5M17 3l-9 9M8 5H4a1 1 0 00-1 1v10a1 1 0 001 1h10a1 1 0 001-1v-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    Archivierte Seite in neuem Tab öffnen
+  </a>
 </article>
 {% else %}
-<iframe src="https://web.archive.org/web/{{ ts_part }}{{ raw_url }}" loading="lazy" style="aspect-ratio: 1.91 / 1; width: 100%; border: 0;"></iframe>
+<iframe src="{{ archive_url }}" loading="lazy" style="aspect-ratio: 1.91 / 1; width: 100%; border: 0;"></iframe>
 {% endif %}

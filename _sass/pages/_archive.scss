@@ -193,6 +193,63 @@
   }
 }
 
+// Timeline layout
+.archiv-timeline {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+  margin-top: 2rem;
+  padding-left: 3rem;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0.75rem;
+    top: 0.6rem;
+    bottom: 1rem;
+    width: 2px;
+    background: $border;
+  }
+
+  @include breakpoint($lg) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.timeline-marker {
+  grid-column: 1 / -1;
+  position: relative;
+  margin-top: 1.5rem;
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: -3rem;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: $primary;
+    border: 3px solid #fff;
+    box-shadow: 0 0 0 2px $primary;
+  }
+
+  &__jahr {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: $heading-color;
+    border-bottom: 2px solid $border;
+    display: block;
+    padding-bottom: 0.5rem;
+  }
+}
+
 // Individual archive entry
 .archiv-eintrag {
   background: $bg-color;
@@ -237,6 +294,21 @@
     border-radius: 4px;
     overflow: hidden;
     border: 1px solid $border;
+  }
+
+  &__extern {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-top: 0.75rem;
+    font-size: 0.825rem;
+    color: $primary;
+    border-bottom: none;
+
+    &:hover {
+      border-bottom: none;
+      opacity: 0.8;
+    }
   }
 
   &__link {
