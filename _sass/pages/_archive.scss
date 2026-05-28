@@ -1,0 +1,251 @@
+// Archive site styles
+
+// Homepage intro
+.archive-intro {
+  padding: 9rem 0 2rem;
+  text-align: center;
+
+  &__text {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 1.125rem;
+    color: $grey;
+    line-height: 1.7;
+  }
+}
+
+// Kategorien grid on homepage
+.kategorien {
+  padding: 2rem 0 6rem;
+
+  &__title {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+    color: $heading-color;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+
+    @include breakpoint($lg) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.25rem;
+    }
+  }
+}
+
+.kat-card {
+  position: relative;
+  display: block;
+  border-bottom: none;
+  border-radius: 6px;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  background: $reverse;
+
+  &:hover .kat-card__img,
+  &:focus .kat-card__img {
+    transform: scale(1.04);
+  }
+
+  &:hover,
+  &:focus {
+    border-bottom: none;
+  }
+
+  &__img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.35s ease;
+  }
+
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.1) 55%, transparent 100%);
+  }
+
+  &__label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1rem 1.1rem 0.9rem;
+    color: #fff;
+  }
+
+  &__title {
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 0 0 0.2rem;
+    color: #fff;
+    line-height: 1.2;
+
+    @include breakpoint($md) {
+      font-size: 1.15rem;
+    }
+  }
+
+  &__zeitraum {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.75);
+    letter-spacing: 0.03em;
+  }
+
+  &--placeholder {
+    background: linear-gradient(135deg, #3c3d41 0%, #555 100%);
+  }
+
+  &--placeholder &__placeholder-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -70%);
+    font-size: 2.5rem;
+    opacity: 0.4;
+  }
+}
+
+// About section
+.archive-ueber {
+  background: $light-bg-color;
+  padding: 3rem 0;
+
+  &__inner {
+    max-width: 760px;
+    margin: 0 auto;
+
+    h2 {
+      margin-bottom: 1rem;
+    }
+
+    p {
+      color: $grey;
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+// Category page
+.kat-page {
+  padding: 2.5rem 0 4rem;
+
+  &__back {
+    display: inline-block;
+    margin-bottom: 2rem;
+    font-size: 0.875rem;
+    color: $primary;
+    border-bottom: none;
+
+    &:hover {
+      border-bottom: none;
+      opacity: 0.8;
+    }
+  }
+
+  &__intro {
+    max-width: 760px;
+    margin-bottom: 2rem;
+    font-size: 1.05rem;
+    color: $grey;
+    line-height: 1.7;
+  }
+
+  &__archiv-hinweis {
+    font-size: 0.85rem;
+    color: $grey;
+    background: $light-bg-color;
+    border-left: 3px solid $primary;
+    padding: 0.75rem 1rem;
+    margin-bottom: 2.5rem;
+    border-radius: 0 4px 4px 0;
+
+    a {
+      color: $primary;
+    }
+  }
+}
+
+// Decade grouping
+.jahrzehnt {
+  margin-bottom: 3rem;
+
+  &__label {
+    font-size: 1.25rem;
+    color: $heading-color;
+    border-bottom: 2px solid $border;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  &__eintraege {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+}
+
+// Individual archive entry
+.archiv-eintrag {
+  display: flex;
+  gap: 1.5rem;
+  background: $bg-color;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.07);
+  padding: 1.25rem 1.5rem;
+  align-items: flex-start;
+
+  &__jahr {
+    flex-shrink: 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: $primary;
+    line-height: 1;
+    min-width: 3.5rem;
+    padding-top: 0.2rem;
+  }
+
+  &__inhalt {
+    flex: 1;
+  }
+
+  &__band {
+    font-size: 1rem;
+    margin-bottom: 0.4rem;
+    color: $heading-color;
+  }
+
+  &__text {
+    font-size: 0.9rem;
+    color: $grey;
+    line-height: 1.6;
+    margin-bottom: 0.75rem;
+  }
+
+  &__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.825rem;
+    color: $primary;
+    border-bottom: none;
+    font-weight: 500;
+
+    &:hover {
+      border-bottom: none;
+      opacity: 0.8;
+    }
+
+    svg {
+      flex-shrink: 0;
+    }
+  }
+}

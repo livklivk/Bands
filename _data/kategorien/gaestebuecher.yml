@@ -1,0 +1,59 @@
+beschreibung: >
+  Gästebücher, Chatrooms und Message Boards waren die ersten interaktiven Räume
+  auf Bandwebsites – Orte, an denen Fans miteinander und manchmal sogar mit der
+  Band selbst kommunizieren konnten. Sie sind Vorläufer heutiger Social Media.
+
+eintraege:
+  - band: "Oasis"
+    jahr: 1997
+    beschreibung: "Das Gästebuch auf oasisinet.com war eines der meistbesuchten der britischen Musikszene – Fans aus aller Welt hinterließen Nachrichten, oft auf Englisch, Deutsch und Spanisch."
+    link: "https://web.archive.org/web/1997*/http://www.oasisinet.com/"
+    link_text: "Wayback Machine: oasisinet.com (1997)"
+
+  - band: "Spice Girls"
+    jahr: 1998
+    beschreibung: "spicegirls.com betrieb ein aktives Gästebuch mit tausenden Einträgen – ein früher Beweis für die globale Reichweite der Band."
+    link: "https://web.archive.org/web/1998*/http://www.spicegirls.com/"
+    link_text: "Wayback Machine: spicegirls.com (1998)"
+
+  - band: "Backstreet Boys"
+    jahr: 1999
+    beschreibung: "Das Backstreet Boys Message Board war eines der größten fan-betriebenen Foren der späten 90er – direkt von der offiziellen Website verlinkt."
+    link: "https://web.archive.org/web/1999*/http://www.backstreetboys.com/"
+    link_text: "Wayback Machine: backstreetboys.com (1999)"
+
+  - band: "Radiohead"
+    jahr: 2000
+    beschreibung: "Radiohead betrieb einen eigenen IRC-Chatroom, verlinkt über radiohead.com – Fans diskutierten dort Songtexte, Theorien und Konzertmitschnitte."
+    link: "https://web.archive.org/web/2000*/http://www.radiohead.com/"
+    link_text: "Wayback Machine: radiohead.com (2000)"
+
+  - band: "ABBA"
+    jahr: 2001
+    beschreibung: "Im Zuge des Mamma Mia!-Hypes entstand auf abba.com ein Forum, in dem Fans über Covers, Tribute-Acts und die Chancen einer Reunion diskutierten."
+    link: "https://web.archive.org/web/2001*/http://www.abba.com/"
+    link_text: "Wayback Machine: abba.com (2001)"
+
+  - band: "Arctic Monkeys"
+    jahr: 2005
+    beschreibung: "Arctic Monkeys verdankten ihren frühen Erfolg zum Teil den Foren auf arcticmonkeys.com – hier wurden Demo-Tapes diskutiert, bevor die Band einen Plattenvertrag hatte."
+    link: "https://web.archive.org/web/2005*/http://www.arcticmonkeys.com/"
+    link_text: "Wayback Machine: arcticmonkeys.com (2005)"
+
+  - band: "Beatles"
+    jahr: 2000
+    beschreibung: "Das offizielle Beatles-Forum auf beatles.com wurde zu einem Archiv für Fans der ersten Stunde – ältere Fans und jüngere Generationen diskutierten gemeinsam das Erbe der Band."
+    link: "https://web.archive.org/web/2000*/http://www.beatles.com/"
+    link_text: "Wayback Machine: beatles.com (2000)"
+
+  - band: "One Direction"
+    jahr: 2012
+    beschreibung: "onedirectionmusic.com integrierte ein Community-Forum, das bald von der Band-eigenen App und Twitter abgelöst wurde – ein Dokument des Übergangs von Foren zu Social Media."
+    link: "https://web.archive.org/web/2012*/http://www.onedirectionmusic.com/"
+    link_text: "Wayback Machine: onedirectionmusic.com (2012)"
+
+  - band: "Taylor Swift"
+    jahr: 2009
+    beschreibung: "Auf taylorswift.com gab es in den frühen Jahren ein aktives Fan-Forum, bevor die Community auf Tumblr und später TikTok abwanderte."
+    link: "https://web.archive.org/web/2009*/http://www.taylorswift.com/"
+    link_text: "Wayback Machine: taylorswift.com (2009)"

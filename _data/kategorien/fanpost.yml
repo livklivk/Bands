@@ -1,0 +1,53 @@
+beschreibung: >
+  Lange bevor Social Media direkte Kommunikation ermöglichte, veröffentlichten
+  Bands auf ihren Websites postalische Adressen für Fanpost. Diese Praxis reicht
+  von handgeschriebenen Briefen bis zu strukturierten Kontaktformularen der 2000er.
+
+eintraege:
+  - band: "Beatles"
+    jahr: 1996
+    beschreibung: "The Beatles official website listete eine Fanpost-Adresse in London auf – Tradition aus den 60er-Jahren, jetzt im Web verewigt."
+    link: "https://web.archive.org/web/1996*/http://www.beatles.com/"
+    link_text: "Wayback Machine: beatles.com (1996)"
+
+  - band: "Oasis"
+    jahr: 1997
+    beschreibung: "oasisinet.com veröffentlichte eine postalische Management-Adresse, an die Fans Briefe schicken konnten – mit dem Hinweis, keine persönlichen Antworten zu garantieren."
+    link: "https://web.archive.org/web/1997*/http://www.oasisinet.com/"
+    link_text: "Wayback Machine: oasisinet.com (1997)"
+
+  - band: "Spice Girls"
+    jahr: 1997
+    beschreibung: "Die Spice Girls Website listete sowohl eine postalische Fanpost-Adresse als auch frühe E-Mail-Kontaktmöglichkeiten – ein Übergangsdokument zwischen zwei Epochen."
+    link: "https://web.archive.org/web/1997*/http://www.spicegirls.com/"
+    link_text: "Wayback Machine: spicegirls.com (1997)"
+
+  - band: "Backstreet Boys"
+    jahr: 1999
+    beschreibung: "backstreetboys.com hatte eine dedizierte Kontaktseite mit postalischer Adresse sowie Anleitung, wie man Fanpost korrekt adressiert."
+    link: "https://web.archive.org/web/1999*/http://www.backstreetboys.com/"
+    link_text: "Wayback Machine: backstreetboys.com (1999)"
+
+  - band: "ABBA"
+    jahr: 2001
+    beschreibung: "Die offizielle ABBA-Website stellte klare Anweisungen für Fanpost bereit und trennte zwischen allgemeinen Anfragen und Post an einzelne Bandmitglieder."
+    link: "https://web.archive.org/web/2001*/http://www.abba.com/"
+    link_text: "Wayback Machine: abba.com (2001)"
+
+  - band: "Arctic Monkeys"
+    jahr: 2006
+    beschreibung: "Mit ihrem rasanten Aufstieg erschien auch auf arcticmonkeys.com eine Kontaktadresse – obwohl die Band damals für ihre Zurückhaltung gegenüber Fan-Interaktionen bekannt war."
+    link: "https://web.archive.org/web/2006*/http://www.arcticmonkeys.com/"
+    link_text: "Wayback Machine: arcticmonkeys.com (2006)"
+
+  - band: "One Direction"
+    jahr: 2013
+    beschreibung: "onedirectionmusic.com führte ein strukturiertes Kontaktformular ein – postalische Fanpost-Adressen wurden durch digitale Anfrage-Formulare ergänzt."
+    link: "https://web.archive.org/web/2013*/http://www.onedirectionmusic.com/"
+    link_text: "Wayback Machine: onedirectionmusic.com (2013)"
+
+  - band: "Radiohead"
+    jahr: 2003
+    beschreibung: "radiohead.com listete auf seiner Kontaktseite Management- und Label-Adressen – persönliche Fanpost-Adressen wurden bewusst nicht veröffentlicht."
+    link: "https://web.archive.org/web/2003*/http://www.radiohead.com/"
+    link_text: "Wayback Machine: radiohead.com (2003)"

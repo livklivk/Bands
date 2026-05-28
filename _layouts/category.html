@@ -1,0 +1,83 @@
+---
+layout: compress
+---
+<!DOCTYPE html>
+<html lang="de">
+
+  {% include head.html %}
+
+  <body class="site">
+
+    {% include header.html %}
+
+    <div class="hero--small">
+      <div class="hero__wrap">
+        <h1 class="hero__title">{{ page.title }}</h1>
+      </div>
+    </div>
+
+    <main class="site__content">
+      <div class="container">
+
+        <div class="kat-page">
+          <a class="kat-page__back" href="{{ '/' | relative_url }}">← Zurück zur Übersicht</a>
+
+          <div class="kat-page__intro">
+            <p>{{ page.kategorie_beschreibung }}</p>
+          </div>
+
+          {% assign daten = site.data.kategorien[page.daten_key] %}
+          {% if daten %}
+            <p class="kat-page__archiv-hinweis">
+              Alle Links führen zur <a href="https://web.archive.org" target="_blank" rel="noopener">Wayback Machine</a>
+              des Internet Archive. Klicke auf ein Jahr in der Kalenderansicht, um einen konkreten Schnappschuss zu öffnen.
+            </p>
+
+            {% assign eintraege_nach_jahr = daten.eintraege | sort: "jahr" %}
+            {% assign aktuelles_jahrzehnt = "" %}
+
+            {% for eintrag in eintraege_nach_jahr %}
+              {% assign jahrzehnt = eintrag.jahr | divided_by: 10 | times: 10 %}
+              {% assign jahrzehnt_str = jahrzehnt | append: "er" %}
+
+              {% if jahrzehnt_str != aktuelles_jahrzehnt %}
+                {% if aktuelles_jahrzehnt != "" %}
+                  </div><!-- /.jahrzehnt__eintraege -->
+                  </section><!-- /.jahrzehnt -->
+                {% endif %}
+                <section class="jahrzehnt">
+                  <h2 class="jahrzehnt__label">{{ jahrzehnt_str }}</h2>
+                  <div class="jahrzehnt__eintraege">
+                {% assign aktuelles_jahrzehnt = jahrzehnt_str %}
+              {% endif %}
+
+              <article class="archiv-eintrag">
+                <div class="archiv-eintrag__jahr">{{ eintrag.jahr }}</div>
+                <div class="archiv-eintrag__inhalt">
+                  <h3 class="archiv-eintrag__band">{{ eintrag.band }}</h3>
+                  <p class="archiv-eintrag__text">{{ eintrag.beschreibung }}</p>
+                  <a class="archiv-eintrag__link" href="{{ eintrag.link }}" target="_blank" rel="noopener">
+                    <svg width="14" height="14" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10.5 3H17v6.5M17 3l-9 9M8 5H4a1 1 0 00-1 1v10a1 1 0 001 1h10a1 1 0 001-1v-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    {{ eintrag.link_text }}
+                  </a>
+                </div>
+              </article>
+
+            {% endfor %}
+
+            {% if aktuelles_jahrzehnt != "" %}
+              </div><!-- /.jahrzehnt__eintraege -->
+              </section><!-- /.jahrzehnt -->
+            {% endif %}
+
+          {% endif %}
+        </div>
+
+      </div>
+    </main>
+
+    {% include footer.html %}
+
+  </body>
+
+</html>

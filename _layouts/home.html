@@ -1,0 +1,94 @@
+---
+layout: compress
+---
+<!DOCTYPE html>
+<html lang="de">
+
+  {% include head.html %}
+  <style>
+    .kategorien__grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+    .kat-card{position:relative;display:block;border-bottom:none;border-radius:6px;overflow:hidden;aspect-ratio:4/3;background:#3c3d41;text-decoration:none}
+    .kat-card__img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s ease;filter:grayscale(100%)}
+    .kat-card:hover .kat-card__img{transform:scale(1.04)}
+    .kat-card__overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.72) 0%,rgba(0,0,0,.1) 55%,transparent 100%)}
+    .kat-card__label{position:absolute;bottom:0;left:0;right:0;padding:1rem 1.1rem .9rem}
+    .kat-card__title{font-size:1rem;font-weight:700;margin:0 0 .2rem;color:#fff;line-height:1.2}
+    .kat-card__zeitraum{font-size:.75rem;color:rgba(255,255,255,.75)}
+    .kat-card__placeholder-icon{position:absolute;top:40%;left:50%;transform:translate(-50%,-50%);font-size:2.5rem;opacity:.4}
+    @media(min-width:62em){.kategorien__grid{grid-template-columns:repeat(2,1fr);gap:1.25rem}}
+    .hero--collage{background-size:cover;background-position:center top;margin-top:3.75rem;position:relative;min-height:22rem;display:flex;align-items:center;justify-content:center;text-align:center}
+    .hero--collage .hero__overlay{position:absolute;inset:0;background:rgba(0,0,0,0.55)}
+    .hero--collage .hero__wrap{position:relative!important;z-index:1;text-align:center!important;padding:2rem 1rem;top:auto!important;left:auto!important;transform:none!important;width:100%;max-width:700px;margin:0 auto}
+    .hero--collage .hero__title{font-size:2rem;color:#fff;margin-bottom:.5rem;text-shadow:0 2px 8px rgba(0,0,0,.6)}
+    .hero--collage .hero__meta{color:rgba(255,255,255,.85);font-size:1rem;text-shadow:0 1px 4px rgba(0,0,0,.5)}
+    @media(min-width:62em){.hero--collage{margin-top:0;min-height:32rem}.hero--collage .hero__title{font-size:3rem}}
+  </style>
+
+  <body class="site">
+
+    {% include header.html %}
+
+    <div class="hero hero--collage" style="background-image:url('{{ "/assets/img/hero-collage.jpg" | relative_url }}')">
+      <div class="hero__overlay"></div>
+      <div class="hero__wrap">
+        <h1 class="hero__title">{{ site.title | escape }}</h1>
+        <p class="hero__meta">{{ site.tagline }}</p>
+      </div>
+    </div>
+
+    <main class="site__content">
+      <section class="archive-intro">
+        <div class="container">
+          <div class="archive-intro__text">
+            <p>{{ site.description }}</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="kategorien">
+        <div class="container">
+          <h2 class="kategorien__title">Kategorien</h2>
+          <div class="kategorien__grid">
+            {% for kat in page.kategorien %}
+            <a class="kat-card{% unless kat.bild %} kat-card--placeholder{% endunless %}" href="{{ kat.url | relative_url }}">
+              {% if kat.bild %}
+                <img class="kat-card__img" src="{{ kat.bild | relative_url }}" alt="{{ kat.name }}">
+              {% else %}
+                <span class="kat-card__placeholder-icon">{{ kat.icon }}</span>
+              {% endif %}
+              <div class="kat-card__overlay"></div>
+              <div class="kat-card__label">
+                <h3 class="kat-card__title">{{ kat.name }}</h3>
+                <span class="kat-card__zeitraum">{{ kat.zeitraum }}</span>
+              </div>
+            </a>
+            {% endfor %}
+          </div>
+        </div>
+      </section>
+
+      <section class="archive-ueber">
+        <div class="container">
+          <div class="archive-ueber__inner">
+            <h2>Über dieses Archiv</h2>
+            <p>
+              Dieses Web-Archiv dokumentiert, wie Bands von den frühen 1990ern bis heute
+              mit ihren Fans über ihre offiziellen Websites interagiert haben. Alle verlinkten
+              Seiten wurden über die <a href="https://web.archive.org" target="_blank" rel="noopener">Wayback Machine</a>
+              des Internet Archive zugänglich gemacht.
+            </p>
+            <p>
+              Die archivierten Seiten können langsam laden oder teilweise unvollständig sein –
+              das gehört zur Natur des Web-Archivierens und macht einen Teil des historischen
+              Charakters dieser Dokumente aus.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    {% include footer.html %}
+
+  </body>
+
+</html>
