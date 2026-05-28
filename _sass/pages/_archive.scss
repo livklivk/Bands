@@ -196,8 +196,8 @@
 // Timeline layout
 .archiv-timeline {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.25rem;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 0.6rem;
   margin-top: 2rem;
   padding-left: 3rem;
   position: relative;
@@ -211,16 +211,12 @@
     width: 2px;
     background: $border;
   }
-
-  @include breakpoint($lg) {
-    grid-template-columns: repeat(3, 1fr);
-  }
 }
 
 .timeline-marker {
   grid-column: 1 / -1;
   position: relative;
-  margin-top: 1.5rem;
+  margin-top: 2rem;
 
   &:first-child {
     margin-top: 0;
@@ -247,6 +243,44 @@
     border-bottom: 2px solid $border;
     display: block;
     padding-bottom: 0.5rem;
+  }
+}
+
+// Compact band tile
+.band-tile {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.4rem;
+  padding: 0.6rem 0.85rem;
+  background: $bg-color;
+  border: 1px solid $border;
+  border-radius: 6px;
+  border-bottom: none;
+  color: $text-color;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: background 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  &:hover {
+    background: $light-bg-color;
+    border-color: $primary;
+    border-bottom: none;
+    color: $primary;
+    transform: translateY(-1px);
+  }
+
+  &__name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__icon {
+    flex-shrink: 0;
+    opacity: 0.5;
   }
 }
 

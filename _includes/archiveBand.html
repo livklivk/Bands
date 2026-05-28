@@ -1,0 +1,7 @@
+{% assign raw_url = include.url %}
+{% if include.datetime %}{% assign ts_part = include.datetime | append: "/" %}{% else %}{% assign ts_part = "" %}{% endif %}
+{% assign archive_url = "https://web.archive.org/web/" | append: ts_part | append: raw_url %}
+<a class="band-tile" href="{{ archive_url }}" target="_blank" rel="noopener">
+  <span class="band-tile__name">{{ include.band }}</span>
+  <svg class="band-tile__icon" width="11" height="11" viewBox="0 0 20 20" fill="none"><path d="M10.5 3H17v6.5M17 3l-9 9M8 5H4a1 1 0 00-1 1v10a1 1 0 001 1h10a1 1 0 001-1v-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</a>
