@@ -1,0 +1,17 @@
+{% assign raw_url = include.url %}
+
+{% assign clean_url = raw_url
+  | replace: "https://", ""
+  | replace: "http://", "" %}
+
+{% if include.datetime %}
+  {% assign ts_part = include.datetime | append: "/" %}
+{% else %}
+  {% assign ts_part = "" %}
+{% endif %}
+
+<iframe
+  src="https://embed.archivedweb.net/{{ ts_part }}{{ clean_url }}"
+  loading="lazy"
+  style="aspect-ratio: 1.91 / 1; width: 100%; border: 0;">
+</iframe>
