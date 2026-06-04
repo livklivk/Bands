@@ -1,0 +1,67 @@
+---
+layout: compress
+title: Über das Archiv
+permalink: /ueber/
+---
+<!DOCTYPE html>
+<html lang="de">
+
+  {% include head.html %}
+  <style>
+    .ueber-hero{margin-top:3.75rem;background:#1a1a1a;padding:3rem 1rem 2rem;text-align:center}
+    .ueber-hero__title{font-size:2rem;color:#fff;margin:0 0 .5rem}
+    .ueber-hero__sub{color:rgba(255,255,255,.65);font-size:1rem;margin:0}
+    @media(min-width:62em){.ueber-hero{margin-top:0;padding:5rem 1rem 3rem}.ueber-hero__title{font-size:2.8rem}}
+
+    .ueber-content{padding:3rem 0 4rem}
+    .ueber-content .container{max-width:720px}
+    .ueber-content h2{font-size:1.3rem;margin:2.5rem 0 .75rem;color:#111}
+    .ueber-content p{margin:0 0 1.2rem;line-height:1.75;color:#333}
+    .ueber-content a{color:#555;text-decoration:underline}
+    .ueber-content a:hover{color:#111}
+  </style>
+
+  <body class="site">
+
+    {% include header.html %}
+
+    <div class="ueber-hero">
+      <h1 class="ueber-hero__title">Über das Archiv</h1>
+      <p class="ueber-hero__sub">Hintergrund, Geschichte und Ziel dieses Projekts</p>
+    </div>
+
+    <main class="site__content">
+      <section class="ueber-content">
+        <div class="container">
+
+          <h2>Was ist dieses Archiv?</h2>
+          <p>
+            Hier kannst du deinen Text schreiben. Erzähl, was dieses Archiv ist und wozu es dient.
+          </p>
+
+          <h2>Wie ist es entstanden?</h2>
+          <p>
+            Hier kannst du die Geschichte des Projekts beschreiben.
+          </p>
+
+          <h2>Warum die Wayback Machine?</h2>
+          <p>
+            Alle verlinkten Seiten wurden über die <a href="https://web.archive.org" target="_blank" rel="noopener">Wayback Machine</a>
+            des Internet Archive zugänglich gemacht. Das bedeutet, die Seiten können langsam laden
+            oder teilweise unvollständig sein – das gehört zur Natur des Web-Archivierens.
+          </p>
+
+          <h2>Kontakt & Mitmachen</h2>
+          <p>
+            Hier kannst du schreiben, wie man sich melden oder mitmachen kann.
+          </p>
+
+        </div>
+      </section>
+    </main>
+
+    {% include footer.html %}
+
+  </body>
+
+</html>
