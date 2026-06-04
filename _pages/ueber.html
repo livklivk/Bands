@@ -40,6 +40,8 @@ permalink: /ueber/
     .quote-block p { font-family: 'DM Serif Display', serif; font-size: 17px; font-style: italic; line-height: 1.65; color: #333; }
 
     .about-page a { color: #378ADD; }
+    .usage-card--link { border-color: #378ADD; }
+    .usage-card__cta { display:inline-block; margin-top: 8px; font-size: 13px; color: #378ADD; font-weight: 500; }
 
     @media (max-width: 480px) {
       .usage-grid { grid-template-columns: 1fr; }
@@ -116,9 +118,10 @@ permalink: /ueber/
             <div class="icon">&#9993;</div>
             <p>Mailing-Listen und Fanpost ermöglichten frühe Formen direkter Kommunikation zwischen Fans und Band.</p>
           </div>
-          <a class="usage-card" href="{{ "/" | relative_url }}" style="text-decoration:none;display:block;">
+          <a class="usage-card usage-card--link" href="{{ "/" | relative_url }}" style="text-decoration:none;display:block;">
             <div class="icon">&#8594;</div>
             <p>Das sind nur wenige Beispiele! Schaut selbst rein und entdeckt, was das Archiv noch bereithält.</p>
+            <span class="usage-card__cta">Zum Archiv &rarr;</span>
           </a>
         </div>
 
