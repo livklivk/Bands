@@ -5,6 +5,11 @@ layout: compress
 <html lang="de">
 
   {% include head.html %}
+  <style>
+    .periode-nav{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:2rem}
+    .periode-nav__item{padding:.4rem .9rem;border-radius:20px;font-size:.8rem;border:1px solid #e0e0e0;color:#888;background:#fafafa}
+    .periode-nav__item--aktiv{background:#313237;color:#fff;border-color:#313237;font-weight:500}
+  </style>
 
   <body class="site">
 
@@ -21,6 +26,21 @@ layout: compress
       <div class="container">
         <div class="kat-page">
           <a class="kat-page__back" href="{{ page.parent_url | relative_url }}">← Zurück zu {{ page.parent_title }}</a>
+
+          <nav class="periode-nav">
+            {% assign perioden = "pre-2000|Pre 2000,2001-2005|2001–2005,2006-2010|2006–2010,2011-2015|2011–2015,2016-2020|2016–2020,2021-heute|2021–heute" | split: "," %}
+            {% for periode in perioden %}
+              {% assign p = periode | split: "|" %}
+              {% assign p_slug = p[0] %}
+              {% assign p_label = p[1] %}
+              {% assign p_url = page.parent_url | append: p_slug | append: "/" %}
+              {% if page.permalink == p_url %}
+                <span class="periode-nav__item periode-nav__item--aktiv">{{ p_label }}</span>
+              {% else %}
+                <span class="periode-nav__item">{{ p_label }}</span>
+              {% endif %}
+            {% endfor %}
+          </nav>
 
           <div class="archiv-timeline">
             {{ content }}
