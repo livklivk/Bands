@@ -7,58 +7,127 @@ permalink: /ueber/
 <html lang="de">
 
   {% include head.html %}
-  <style>
-    .ueber-hero{margin-top:3.75rem;background:#1a1a1a;padding:3rem 1rem 2rem;text-align:center}
-    .ueber-hero__title{font-size:2rem;color:#fff;margin:0 0 .5rem}
-    .ueber-hero__sub{color:rgba(255,255,255,.65);font-size:1rem;margin:0}
-    @media(min-width:62em){.ueber-hero{margin-top:0;padding:5rem 1rem 3rem}.ueber-hero__title{font-size:2.8rem}}
 
-    .ueber-content{padding:3rem 0 4rem}
-    .ueber-content .container{max-width:720px}
-    .ueber-content h2{font-size:1.3rem;margin:2.5rem 0 .75rem;color:#111}
-    .ueber-content p{margin:0 0 1.2rem;line-height:1.75;color:#333}
-    .ueber-content a{color:#555;text-decoration:underline}
-    .ueber-content a:hover{color:#111}
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    .about-page * { box-sizing: border-box; }
+    .about-page { font-family: 'DM Sans', sans-serif; max-width: 700px; margin: 0 auto; padding: 2.5rem 1rem 4rem; }
+    .eyebrow { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #999; margin-bottom: 0.75rem; }
+    .about-page h1 { font-family: 'DM Serif Display', serif; font-size: 38px; font-weight: 400; line-height: 1.15; margin-bottom: 0.5rem; }
+    .about-page h1 em { font-style: italic; color: #888; }
+    .about-subtitle { font-size: 16px; color: #555; line-height: 1.6; margin-bottom: 3rem; max-width: 520px; }
+    .about-divider { border: none; border-top: 1px solid #e5e5e5; margin: 2.5rem 0; }
+    .about-page h2 { font-family: 'DM Serif Display', serif; font-size: 24px; font-weight: 400; margin-bottom: 1rem; }
+    .about-page p { font-size: 15px; line-height: 1.75; color: #555; }
+
+    .timeline { position: relative; padding-left: 28px; margin-top: 1.5rem; }
+    .timeline::before { content: ''; position: absolute; left: 6px; top: 8px; bottom: 8px; width: 1px; background: #e5e5e5; }
+    .tl-item { position: relative; margin-bottom: 2rem; }
+    .tl-item:last-child { margin-bottom: 0; }
+    .tl-dot { position: absolute; left: -25px; top: 5px; width: 11px; height: 11px; border-radius: 50%; background: #fff; border: 1.5px solid #ccc; }
+    .tl-item.highlight .tl-dot { background: #B5D4F4; border-color: #378ADD; }
+    .tl-label { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #aaa; margin-bottom: 3px; }
+    .tl-text { font-size: 15px; line-height: 1.7; color: #555; }
+    .tl-text strong { font-weight: 500; color: #333; }
+
+    .usage-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 1.25rem; }
+    .usage-card { background: #f7f7f5; border-radius: 12px; padding: 1rem 1.1rem; border: 1px solid #ebebeb; }
+    .usage-card .icon { font-size: 18px; color: #888; margin-bottom: 8px; }
+    .usage-card p { font-size: 14px; line-height: 1.6; color: #555; }
+
+    .quote-block { border-left: 2px solid #B5D4F4; padding-left: 1.25rem; margin: 1.5rem 0; }
+    .quote-block p { font-family: 'DM Serif Display', serif; font-size: 17px; font-style: italic; line-height: 1.65; color: #333; }
+
+    .about-page a { color: #378ADD; }
+
+    @media (max-width: 480px) {
+      .usage-grid { grid-template-columns: 1fr; }
+      .about-page h1 { font-size: 28px; }
+    }
+
+    /* Abstand für Header */
+    .about-wrap { margin-top: 3.75rem; }
+    @media(min-width:62em){ .about-wrap { margin-top: 0; } }
   </style>
 
   <body class="site">
 
     {% include header.html %}
 
-    <div class="ueber-hero">
-      <h1 class="ueber-hero__title">Über das Archiv</h1>
-      <p class="ueber-hero__sub">Hintergrund, Geschichte und Ziel dieses Projekts</p>
-    </div>
+    <div class="about-wrap">
+      <div class="about-page">
+        <p class="eyebrow">Universitätsprojekt · Webarchiv</p>
+        <h1>Bands &amp; Fans<br><em>im Web</em></h1>
+        <p class="about-subtitle">Ein digitales Archiv zur Geschichte der Fan–Band-Interaktion auf offiziellen Bandwebsites – von den 1990ern bis heute, dokumentiert über die Wayback Machine.</p>
 
-    <main class="site__content">
-      <section class="ueber-content">
-        <div class="container">
+        <hr class="about-divider">
 
-          <h2>Was ist dieses Archiv?</h2>
-          <p>
-            Hier kannst du deinen Text schreiben. Erzähl, was dieses Archiv ist und wozu es dient.
-          </p>
+        <h2>Entstehung des Projekts</h2>
 
-          <h2>Wie ist es entstanden?</h2>
-          <p>
-            Hier kannst du die Geschichte des Projekts beschreiben.
-          </p>
-
-          <h2>Warum die Wayback Machine?</h2>
-          <p>
-            Alle verlinkten Seiten wurden über die <a href="https://web.archive.org" target="_blank" rel="noopener">Wayback Machine</a>
-            des Internet Archive zugänglich gemacht. Das bedeutet, die Seiten können langsam laden
-            oder teilweise unvollständig sein – das gehört zur Natur des Web-Archivierens.
-          </p>
-
-          <h2>Kontakt & Mitmachen</h2>
-          <p>
-            Hier kannst du schreiben, wie man sich melden oder mitmachen kann.
-          </p>
-
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-label">Ausgangspunkt</div>
+            <div class="tl-text">Zu Beginn hatten wir kaum Berührungspunkte mit Webarchiven – das Thema hat uns aber sofort fasziniert. Unsere erste Idee war ein Archiv rund um <strong>Oasis</strong>, schlicht aus eigenem Interesse heraus.</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-label">Erste Recherche</div>
+            <div class="tl-text">In der Recherchephase haben wir verschiedene Richtungen erkundet – unter anderem die Klatschpresse rund um Bands. Durch den Austausch im Seminar haben sich neue Perspektiven eröffnet.</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-label">Fokusverschiebung</div>
+            <div class="tl-text">Der Fokus verschob sich von Presse-Berichterstattung hin zu den <strong>offiziellen Bandwebsites selbst</strong> – und damit zu den Interaktionsmöglichkeiten, die diese Seiten Fans direkt boten.</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-label">Erste Struktur</div>
+            <div class="tl-text">Zunächst wollten wir uns auf einzelne Bands konzentrieren (Oasis, Beatles, One Direction u.a.) und von dort ausgehend Links sammeln.</div>
+          </div>
+          <div class="tl-item highlight">
+            <div class="tl-dot"></div>
+            <div class="tl-label">Entscheidung</div>
+            <div class="tl-text">Wir haben die Struktur dann umgekehrt: Statt nach Bands zu gliedern, gehen wir von <strong>Features und Interaktionsformen</strong> aus – Mailing-Listen, Fanclubs, Gästebücher usw. – und sammeln darunter viele Beispiele. Innerhalb jeder Kategorie sind die Einträge in 5-Jahres-Schritten unterteilt, um Übersichtlichkeit zu gewährleisten.</div>
+          </div>
         </div>
-      </section>
-    </main>
+
+        <hr class="about-divider">
+
+        <h2>Wozu dient dieses Archiv?</h2>
+
+        <div class="quote-block">
+          <p>Früher schien direkter Kontakt zu den Stars über die Website selbst hergestellt zu werden – heute sind solche Features oft kaum noch sichtbar.</p>
+        </div>
+
+        <p>Das Archiv bietet einen Ausgangspunkt, um spannende Entwicklungen in der Fan–Band-Kommunikation zu entdecken. Es lässt sich gut mit der Entstehung anderer Plattformen verknüpfen:</p>
+
+        <div class="usage-grid">
+          <div class="usage-card">
+            <div class="icon">▶</div>
+            <p>In den 90ern, lange vor YouTube, wurden Musikvideos direkt auf der Bandwebsite präsentiert.</p>
+          </div>
+          <div class="usage-card">
+            <div class="icon">🖼</div>
+            <p>Fan-Galerien auf offiziellen Seiten entstanden wohl, weil es noch kaum andere Plattformen zum Teilen von Fanart gab.</p>
+          </div>
+          <div class="usage-card">
+            <div class="icon">✉</div>
+            <p>Mailing-Listen und Fanpost ermöglichten frühe Formen direkter Kommunikation zwischen Fans und Band.</p>
+          </div>
+          <div class="usage-card">
+            <div class="icon">→</div>
+            <p>Das sind nur Beispiele – schaut selbst rein und entdeckt, was das Archiv noch bereithält.</p>
+          </div>
+        </div>
+
+        <hr class="about-divider">
+
+        <h2>Warum die Wayback Machine?</h2>
+        <p>Alle verlinkten Seiten wurden über die <a href="https://web.archive.org">Wayback Machine</a> des Internet Archive zugänglich gemacht. Das bedeutet: Seiten können langsam laden oder teilweise unvollständig sein – das gehört zur Natur des Webarchivierens und ist gewissermaßen Teil der Erfahrung.</p>
+      </div>
+    </div>
 
     {% include footer.html %}
 
