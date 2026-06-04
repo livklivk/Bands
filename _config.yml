@@ -3,8 +3,7 @@ title: Bands & Fans im Web
 author: Olivia Kinsey
 lang: de
 description: >
-  Ein Web-Archiv über Fan-Interaktionen auf Band-Websites von den 1990ern bis heute –
-  Mailing-Listen, Fanclubs, Fanpost, Gästebücher, Chats und Foren, dokumentiert über die Wayback Machine.
+  Hier findet ihr archivierte Mailing-Listen, Fanclubs, Fanpost und Gästebücher von offiziellen Band-Websites. Alle Seiten sind über die Wayback Machine zugänglich.
 baseurl: "/Bands" # the subpath of your site, e.g. /blog
 url: "https://livklivk.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 
@@ -28,7 +27,7 @@ navigation:
   - {name: 'Gästebücher & Foren', link: '/gaestebuecher/'}
 
 tagline: >
-  Fan-Interaktionen auf Band-Websites — 1993 bis heute
+  Fan-Interaktionen auf Band-Websites von den 90er-Jahren bis heute
 
 hero_img: posts/sleek_lg.jpg # Main background image: use the path from /assets/img/ => This will output /assets/img/posts/sleek_lg.jpg
 
