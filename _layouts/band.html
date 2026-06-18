@@ -25,6 +25,15 @@ layout: compress
     .zeitstrahl__inhalt{padding:.1rem 0 2.5rem}
     .zeitstrahl__punkt{display:inline-block;width:10px;height:10px;border-radius:50%;background:#313237;margin-top:.35rem;position:absolute;margin-left:-1.8rem}
 
+    /* SCREENSHOT GRID */
+    .screenshot-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;margin-top:1rem}
+    @media(min-width:40em){.screenshot-grid{grid-template-columns:repeat(4,1fr)}}
+    @media(min-width:62em){.screenshot-grid{grid-template-columns:repeat(5,1fr)}}
+    .screenshot-item{display:block;border-bottom:none;text-decoration:none;border-radius:6px;overflow:hidden;background:#f0f0ee;transition:box-shadow .2s}
+    .screenshot-item:hover{box-shadow:0 4px 14px rgba(0,0,0,.15)}
+    .screenshot-item img{width:100%;display:block;aspect-ratio:4/3;object-fit:cover}
+    .screenshot-item__label{display:block;font-size:.65rem;color:#555;padding:.4rem .5rem;line-height:1.3}
+
     /* UPDATES */
     .update{margin-bottom:1rem;padding:1rem 1.2rem;background:#f9f9f7;border-radius:6px;border-left:3px solid #313237}
     .update__kategorie{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#888;margin-bottom:.3rem}
