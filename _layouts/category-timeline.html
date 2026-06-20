@@ -1,0 +1,76 @@
+---
+layout: compress
+---
+<!DOCTYPE html>
+<html lang="de">
+
+  {% include head.html %}
+  <style>
+    /* HERO */
+    .hero--small{margin-top:3.75rem}
+    @media(min-width:62em){.hero--small{margin-top:0}}
+
+    /* ZEITSTRAHL */
+    .zeitstrahl{padding:2rem 0}
+    .zeitstrahl__eintrag{display:grid;grid-template-columns:4rem 1fr;gap:0 1.5rem;margin-bottom:0}
+    .zeitstrahl__jahr-wrap{display:flex;flex-direction:column;align-items:center}
+    .zeitstrahl__jahr{font-size:.9rem;font-weight:700;color:#313237;padding:.2rem 0}
+    .zeitstrahl__linie{flex:1;width:2px;background:#e0e0e0;margin:.3rem 0}
+    .zeitstrahl__eintrag:last-child .zeitstrahl__linie{display:none}
+    .zeitstrahl__inhalt{padding:.1rem 0 2.5rem}
+
+    /* BAND LABEL */
+    .band-label{display:inline-block;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:#fff;background:#313237;border-radius:3px;padding:.2rem .5rem;margin-bottom:.6rem}
+
+    /* UPDATES */
+    .update{margin-bottom:1rem;padding:1rem 1.2rem;background:#f9f9f7;border-radius:6px;border-left:3px solid #313237}
+    .update__text{font-size:.9rem;color:#313237;margin:0 0 .5rem}
+    .update__text:last-child{margin-bottom:0}
+
+    /* SCREENSHOT GRID */
+    .screenshot-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;margin-top:.75rem}
+    @media(min-width:40em){.screenshot-grid{grid-template-columns:repeat(4,1fr)}}
+    @media(min-width:62em){.screenshot-grid{grid-template-columns:repeat(5,1fr)}}
+    .screenshot-item{display:block;border-bottom:none;text-decoration:none;border-radius:6px;overflow:hidden;background:#f0f0ee;transition:box-shadow .2s}
+    .screenshot-item:hover{box-shadow:0 4px 14px rgba(0,0,0,.15)}
+    .screenshot-item img{width:100%;display:block;aspect-ratio:4/3;object-fit:cover}
+    .screenshot-item__label{display:block;font-size:.65rem;color:#555;padding:.4rem .5rem;line-height:1.3}
+
+    .kat-page__intro{margin-bottom:2rem;color:#555;font-size:.95rem;line-height:1.6}
+    .section-title{font-size:1rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#666;margin:0 0 1.5rem}
+  </style>
+
+  <body class="site">
+
+    {% include header.html %}
+
+    <div class="hero--small">
+      <div class="hero__wrap">
+        <h1 class="hero__title">{{ page.title }}</h1>
+      </div>
+    </div>
+
+    <main class="site__content">
+      <div class="container">
+        <div class="kat-page">
+          <a class="kat-page__back" href="{{ '/' | relative_url }}">← Zurück zur Übersicht</a>
+
+          <div class="kat-page__intro">
+            <p>{{ page.kategorie_beschreibung }}</p>
+          </div>
+
+          <h2 class="section-title">Chronologie</h2>
+
+          <div class="zeitstrahl">
+            {{ content }}
+          </div>
+
+        </div>
+      </div>
+    </main>
+
+    {% include footer.html %}
+
+  </body>
+
+</html>
