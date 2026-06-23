@@ -14,8 +14,20 @@ layout: compress
     .hero--collage .hero__meta{color:rgba(255,255,255,.85);font-size:1rem;text-shadow:0 1px 4px rgba(0,0,0,.5)}
     @media(min-width:62em){.hero--collage{margin-top:0;min-height:32rem}.hero--collage .hero__title{font-size:3rem}}
 
-    /* === BAND-KACHELN (3 übereinander) === */
-    .bands__grid{display:flex;flex-direction:column;gap:.75rem}
+    /* === HAUPT-LAYOUT === */
+    .home-grid{display:grid;grid-template-columns:1fr;gap:2rem;margin-top:0}
+    @media(min-width:56em){
+      .home-grid{grid-template-columns:3fr 1px 2fr;gap:0;align-items:stretch}
+    }
+
+    /* === VERTIKALER TEILER === */
+    .home-divider-v{display:none;background:#e0e0e0}
+    @media(min-width:56em){.home-divider-v{display:block;width:1px;margin:0 2rem}}
+
+    /* === BAND-KACHELN === */
+    .bands-col{display:flex;flex-direction:column;padding:2rem 0}
+    @media(min-width:56em){.bands-col{padding:2rem 2rem 2rem 0}}
+    .bands__grid{display:flex;flex-direction:column;gap:.75rem;flex:1}
     .band-card{position:relative;display:block;border-bottom:none;border-radius:8px;overflow:hidden;aspect-ratio:16/7;background:#3c3d41;text-decoration:none}
     .band-card__img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s ease;filter:grayscale(100%)}
     .band-card:hover .band-card__img{transform:scale(1.04)}
@@ -24,20 +36,16 @@ layout: compress
     .band-card__title{font-size:1.3rem;font-weight:800;margin:0 0 .15rem;color:#fff;line-height:1.2}
     .band-card__zeitraum{font-size:.75rem;color:rgba(255,255,255,.7)}
 
-    /* === TEILER === */
-    .home-divider{border:none;border-top:1px solid #e0e0e0;margin:2rem 0}
-
-    /* === KATEGORIE-KACHELN (alle nebeneinander) === */
-    .kategorien-col{}
-    .kategorien__grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.75rem}
-    @media(min-width:40em){.kategorien__grid{grid-template-columns:repeat(5,1fr)}}
-    .kat-card{position:relative;display:block;border-bottom:none;border-radius:8px;overflow:hidden;aspect-ratio:3/2;background:#3c3d41;text-decoration:none}
+    /* === KATEGORIE-KACHELN === */
+    .kategorien-col{display:flex;flex-direction:column;padding:2rem 0}
+    @media(min-width:56em){.kategorien-col{padding:2rem 0 2rem 2rem}}
+    .kategorien__grid{display:flex;flex-direction:column;gap:.75rem;flex:1}
+    .kat-card{position:relative;display:block;border-bottom:none;border-radius:8px;overflow:hidden;flex:1;min-height:70px;background:#3c3d41;text-decoration:none}
     .kat-card__img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s ease;filter:grayscale(100%)}
     .kat-card:hover .kat-card__img{transform:scale(1.04)}
     .kat-card__overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.8) 0%,rgba(0,0,0,.1) 60%,transparent 100%)}
-    .kat-card__label{position:absolute;bottom:0;left:0;right:0;padding:.6rem .7rem}
-    .kat-card__title{font-size:.72rem;font-weight:700;margin:0 0 .1rem;color:#fff;line-height:1.25}
-    .kat-card__zeitraum{font-size:.6rem;color:rgba(255,255,255,.7)}
+    .kat-card__label{position:absolute;bottom:0;left:0;right:0;padding:.65rem .8rem}
+    .kat-card__title{font-size:.8rem;font-weight:700;margin:0;color:#fff;line-height:1.25}
 
     /* === SECTION TITLES === */
     .section-title{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:#999;margin:0 0 .75rem}
@@ -45,7 +53,6 @@ layout: compress
     /* === SONSTIGES === */
     .mehr-link{display:inline-block;margin-top:1.25rem;padding:.6rem 1.2rem;border:1px solid #ccc;border-radius:4px;font-size:.875rem;color:#333;text-decoration:none;background:#f5f5f5;transition:background .2s,border-color .2s}
     .mehr-link:hover{background:#eaeaea;border-color:#aaa;color:#111}
-    .main-section{padding:2rem 0}
   </style>
 
   <body class="site">
@@ -69,42 +76,47 @@ layout: compress
         </div>
       </section>
 
-      <section class="main-section">
-        <div class="container">
+      <div class="container">
+        <div class="home-grid">
 
-          <!-- BANDS -->
-          <h2 class="section-title">Bands</h2>
-          <div class="bands__grid">
-            {% for band in page.bands %}
-            <a class="band-card" href="{{ band.url | relative_url }}">
-              <img class="band-card__img" src="{{ band.bild | relative_url }}" alt="{{ band.name }}">
-              <div class="band-card__overlay"></div>
-              <div class="band-card__label">
-                <h3 class="band-card__title">{{ band.name }}</h3>
-                <span class="band-card__zeitraum">{{ band.zeitraum }}</span>
-              </div>
-            </a>
-            {% endfor %}
+          <!-- BANDS (links) -->
+          <div class="bands-col">
+            <h2 class="section-title">Bands</h2>
+            <div class="bands__grid">
+              {% for band in page.bands %}
+              <a class="band-card" href="{{ band.url | relative_url }}">
+                <img class="band-card__img" src="{{ band.bild | relative_url }}" alt="{{ band.name }}">
+                <div class="band-card__overlay"></div>
+                <div class="band-card__label">
+                  <h3 class="band-card__title">{{ band.name }}</h3>
+                  <span class="band-card__zeitraum">{{ band.zeitraum }}</span>
+                </div>
+              </a>
+              {% endfor %}
+            </div>
           </div>
 
-          <hr class="home-divider">
+          <!-- TEILER -->
+          <div class="home-divider-v"></div>
 
-          <!-- KATEGORIEN -->
-          <h2 class="section-title">Kategorien</h2>
-          <div class="kategorien__grid">
-            {% for kat in page.kategorien %}
-            <a class="kat-card" href="{{ kat.url | relative_url }}">
-              <img class="kat-card__img" src="{{ kat.bild | relative_url }}" alt="{{ kat.name }}">
-              <div class="kat-card__overlay"></div>
-              <div class="kat-card__label">
-                <h3 class="kat-card__title">{{ kat.name }}</h3>
-              </div>
-            </a>
-            {% endfor %}
+          <!-- KATEGORIEN (rechts) -->
+          <div class="kategorien-col">
+            <h2 class="section-title">Kategorien</h2>
+            <div class="kategorien__grid">
+              {% for kat in page.kategorien %}
+              <a class="kat-card" href="{{ kat.url | relative_url }}">
+                <img class="kat-card__img" src="{{ kat.bild | relative_url }}" alt="{{ kat.name }}">
+                <div class="kat-card__overlay"></div>
+                <div class="kat-card__label">
+                  <h3 class="kat-card__title">{{ kat.name }}</h3>
+                </div>
+              </a>
+              {% endfor %}
+            </div>
           </div>
 
         </div>
-      </section>
+      </div>
 
       <section class="archive-ueber">
         <div class="container">
