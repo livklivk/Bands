@@ -12,8 +12,12 @@ layout: compress
     .band-hero__overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.85) 0%,rgba(0,0,0,.2) 60%,transparent 100%)}
     .band-hero__content{position:relative;z-index:1;padding:2rem 1.5rem}
     .band-hero__title{font-size:2.5rem;font-weight:800;color:#fff;margin:0 0 .3rem;text-shadow:0 2px 8px rgba(0,0,0,.5)}
-    .band-hero__zeitraum{font-size:1rem;color:rgba(255,255,255,.7)}
+    .band-hero__zeitraum{font-size:1rem;color:rgba(255,255,255,.7);margin:0 0 .75rem}
+    .band-hero__btn{display:inline-block;margin-top:.75rem;padding:.45rem 1rem;border:1.5px solid rgba(255,255,255,.7);border-radius:4px;font-size:.8rem;color:#fff;text-decoration:none;backdrop-filter:blur(4px);background:rgba(255,255,255,.1);transition:background .2s,border-color .2s}
+    .band-hero__btn:hover{background:rgba(255,255,255,.2);border-color:#fff}
     @media(min-width:62em){.band-hero{margin-top:0;min-height:34rem}.band-hero__title{font-size:3.5rem}.band-hero__content{padding:3rem 2rem}}
+    .band-kontext{background:#f9f9f7;border-left:3px solid #313237;padding:1.25rem 1.5rem;margin-bottom:2rem;border-radius:0 6px 6px 0}
+    .band-kontext p{font-size:.95rem;line-height:1.7;color:#444;margin:0}
 
     /* ZEITSTRAHL */
     .zeitstrahl{padding:2rem 0}
@@ -55,11 +59,19 @@ layout: compress
       <div class="band-hero__content container">
         <h1 class="band-hero__title">{{ page.band }}</h1>
         <p class="band-hero__zeitraum">{{ page.zeitraum }}</p>
+        {% if page.aktuelle_website %}
+        <a class="band-hero__btn" href="{{ page.aktuelle_website }}" target="_blank" rel="noopener">Aktuelle Website ↗</a>
+        {% endif %}
       </div>
     </div>
 
     <main class="site__content">
       <div class="container">
+        {% if page.beschreibung %}
+        <div class="band-kontext">
+          <p>{{ page.beschreibung }}</p>
+        </div>
+        {% endif %}
         <div class="zeitstrahl">
           {{ content }}
         </div>
