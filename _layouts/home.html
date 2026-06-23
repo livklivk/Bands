@@ -16,7 +16,7 @@ layout: compress
 
     /* === HAUPT-LAYOUT: Bands links, Kategorien rechts === */
     .home-grid{display:grid;grid-template-columns:1fr;gap:1.5rem}
-    @media(min-width:56em){.home-grid{grid-template-columns:3fr 2fr;gap:2rem;align-items:start}}
+    @media(min-width:56em){.home-grid{grid-template-columns:3fr 2fr;gap:2rem;align-items:stretch}}
 
     /* === BAND-KACHELN (3 gestapelt) === */
     .bands__grid{display:flex;flex-direction:column;gap:.75rem}
@@ -28,9 +28,11 @@ layout: compress
     .band-card__title{font-size:1.3rem;font-weight:800;margin:0 0 .15rem;color:#fff;line-height:1.2}
     .band-card__zeitraum{font-size:.75rem;color:rgba(255,255,255,.7)}
 
-    /* === KATEGORIE-KACHELN (rechte Spalte, gestapelt) === */
-    .kategorien__grid{display:grid;grid-template-columns:1fr 1fr;gap:.6rem}
-    .kat-card{position:relative;display:block;border-bottom:none;border-radius:8px;overflow:hidden;aspect-ratio:3/2;background:#3c3d41;text-decoration:none}
+    /* === KATEGORIE-KACHELN (rechte Spalte, füllt volle Höhe) === */
+    .kategorien-col{display:flex;flex-direction:column;height:100%}
+    .kategorien__grid{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;flex:1}
+    @media(min-width:56em){.kategorien__grid{grid-template-rows:repeat(3,1fr)}}
+    .kat-card{position:relative;display:block;border-bottom:none;border-radius:8px;overflow:hidden;background:#3c3d41;text-decoration:none;min-height:80px}
     .kat-card__img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s ease;filter:grayscale(100%)}
     .kat-card:hover .kat-card__img{transform:scale(1.04)}
     .kat-card__overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.8) 0%,rgba(0,0,0,.1) 60%,transparent 100%)}
@@ -90,7 +92,7 @@ layout: compress
             </div>
 
             <!-- KATEGORIEN (rechte Spalte) -->
-            <div>
+            <div class="kategorien-col">
               <h2 class="section-title">Kategorien</h2>
               <div class="kategorien__grid">
                 {% for kat in page.kategorien %}
