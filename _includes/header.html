@@ -6,7 +6,7 @@
     .dropdown-menu::after{content:'';position:absolute;top:-5px;left:50%;transform:translateX(-50%);border:6px solid transparent;border-top:none;border-bottom-color:#fff}
     .dropdown-menu a{display:block;padding:.5rem 1rem;font-size:.85rem;color:#313237;text-decoration:none;border-bottom:none;white-space:nowrap}
     .dropdown-menu a:hover{background:#f5f5f3;color:#000}
-    .header__link--dropdown:hover .dropdown-menu{display:block}
+    .header__link--dropdown.open .dropdown-menu{display:block}
     .dropdown-arrow{font-size:.6rem;margin-left:.3rem;opacity:.6}
   </style>
   <div class="container">
@@ -22,7 +22,7 @@
           <a class="header__link" href="{{ '/bands/oasis/' | relative_url }}">Oasis</a>
           <a class="header__link" href="{{ '/bands/one-direction/' | relative_url }}">One Direction</a>
           <a class="header__link" href="{{ '/bands/beatles/' | relative_url }}">The Beatles</a>
-          <span class="header__link header__link--dropdown" style="cursor:default">
+          <span class="header__link header__link--dropdown" id="kat-dropdown" style="cursor:pointer">
             Kategorien <span class="dropdown-arrow">▼</span>
             <div class="dropdown-menu">
               <a href="{{ '/mailing-listen/' | relative_url }}">Mailing-Listen &amp; Newsletter</a>
@@ -42,3 +42,13 @@
     </div>
   </div>
 </header>
+<script>
+  var dd = document.getElementById('kat-dropdown');
+  dd.addEventListener('click', function(e) {
+    e.stopPropagation();
+    dd.classList.toggle('open');
+  });
+  document.addEventListener('click', function() {
+    dd.classList.remove('open');
+  });
+</script>
