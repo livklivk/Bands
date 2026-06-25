@@ -41,9 +41,6 @@ layout: compress
     .section-title{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:#999;margin:0 0 .75rem;display:flex;align-items:center;gap:.4rem}
     .section-title::before,.section-title::after{content:'';display:inline-block;width:22px;height:22px;background:url('{{ "/assets/img/stern.webp" | relative_url }}') center/contain no-repeat;mix-blend-mode:multiply;flex-shrink:0}
 
-    /* === RAHMEN === */
-    .rahmen-wrap{position:relative;display:inline-block;padding:.6rem 2rem}
-    .rahmen-wrap::before{content:'';position:absolute;inset:0;background:url('{{ "/assets/img/rahmen.jpg" | relative_url }}') center/100% 100% no-repeat;mix-blend-mode:multiply;pointer-events:none}
 
     /* === SONSTIGES === */
     .mehr-link{display:inline-block;margin-top:1.25rem;padding:.6rem 1.2rem;border:1px solid #ccc;border-radius:4px;font-size:.875rem;color:#333;text-decoration:none;background:#f5f5f5;transition:background .2s,border-color .2s}
@@ -58,7 +55,7 @@ layout: compress
     <div class="hero hero--collage" style="background-image:url('{{ "/assets/img/hero-collage.jpg" | relative_url }}')">
       <div class="hero__overlay"></div>
       <div class="hero__wrap">
-        <h1 class="hero__title"><span class="rahmen-wrap">{{ site.title | escape }}</span></h1>
+        <h1 class="hero__title">{{ site.title | escape }}</h1>
         <p class="hero__meta">{{ site.tagline }}</p>
       </div>
     </div>
